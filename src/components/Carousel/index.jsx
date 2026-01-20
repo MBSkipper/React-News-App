@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import './Carousel.css';
+import './index.css';
 const API_KEY = ''
 //**ENTER API KEY AS A 'STRING' REMOVE BEFORE UPLOAD**
 
@@ -21,13 +21,13 @@ async function fetchNews () {
     } catch (error) {
         alert(error.message)
     }
-
 }
 
   return (
-    <Carousel slide={false} style={{ maxHeight: '50vh'}}>
+    /* <Carousel slide={false}> */
+    <Carousel >
       {news.map((singleNews, index) => (
-      <Carousel.Item key={index}>
+      <Carousel.Item key={index} interval={2000}> 
         <img
           className="d-block news-image"
           src={singleNews.urlToImage}
@@ -39,20 +39,6 @@ async function fetchNews () {
       </Carousel.Item>
       ))}
     </Carousel>
-/*
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=f5f5f5"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      
-*/
   );
 }
 
@@ -64,7 +50,18 @@ NOTES
 Import css file
 Line 2 - Note the syntax for importing the developer created Carousel.css file
 
+CSS file
+Line 3- import './index.css'; imports css file now that it has been moved into the Carousel folder within components
+
 API KEY
 Line 4 - Add the API key from account as a string within ' '
+
+Carousel news item change
+Lines 28/29 - <Carousel slide={false}> this tag + prop enables user to manually change image it is commented out and instead <Carousel> ln 29, is simply a <Carousel> tag.  To revert to manual swap these back and remove the interval prop in ln 31
+Line 31 - <Carousel.Item key={index} interval={2000}> the interval prop enables the carousel to scroll automatically every 2 secs
+Line 33 - regarding className="d-block news-image" - news-image is the developer created styles for this element in the index.css file
+
+
+
 
 */
