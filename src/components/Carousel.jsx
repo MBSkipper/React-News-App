@@ -12,7 +12,7 @@ function NewsCarousel() {
 
 async function fetchNews () {
     try {
-        const res = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=d2e45f7515204683953252ac4178c880&category=general')
+        const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}&category=general`)
         
         const data = await res.json()
 
@@ -24,19 +24,13 @@ async function fetchNews () {
 
 }
 
-
-
-
-
-
   return (
     <Carousel slide={false} style={{ maxHeight: '50vh'}}>
       {news.map((singleNews, index) => (
       <Carousel.Item key={index}>
         <img
           className="d-block news-image"
-          src="https://ichef.bbci.co.uk/news/1024/branded_news/de0d/live/14290d90-f493-11f0-a422-4ba8a094a8fa.jpg"
-          alt="First slide"
+          src={singleNews.urlToImage}
         />
         <Carousel.Caption>
           <h3>{singleNews.title}</h3>
@@ -57,20 +51,7 @@ async function fetchNews () {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=f5f5f5"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+      
 */
   );
 }
@@ -82,4 +63,8 @@ NOTES
 
 Import css file
 Line 2 - Note the syntax for importing the developer created Carousel.css file
+
+API KEY
+Line 4 - Add the API key from account as a string within ' '
+
 */
