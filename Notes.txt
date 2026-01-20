@@ -1,0 +1,8 @@
+NOTES
+
+API key
+to enable api key to be hidden but stored within React folder
+1. set up a .env file within the in the named app folder (ie the outer wrapper), DO NOT put it in the src folder or it will not work.  The file type .env relates to environment 
+2. go to gitignore file and add .env to the end of the list of files.  This will ensure it is not tracked by git
+3. refer to https://vite.dev/guide/env-and-mode 
+4. go to .env file and create variable to hold the API key. Use the appropriate syntax - for this app it is VITE_NEWS_API_KEY = [input API key here]

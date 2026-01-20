@@ -4,3 +4,10 @@
     aspect-ratio: 4/2;
     margin: auto;
 }
+
+.carousel-place {
+    display: flex;
+    align-items: flex-start !important
+    
+
+}
