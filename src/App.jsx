@@ -3,6 +3,7 @@ import NavbarComponent from './components/Navbar.jsx';
 import './App.css'
 import NewsCarousel from './components/Carousel/';
 import SecondaryNavbar from './components/SecondaryNavbar';
+import NewsCard from './components/NewsCard.jsx';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <NavbarComponent />
       <NewsCarousel />
       <SecondaryNavbar />
+      <NewsCard />
       
     </div>
   )
